@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Heading 1 I</h1>
+    <h1 class="bingo">Heading 1 II</h1>
+    <h1>Heading 1 III</h1>
+    <h1>Heading 1 IV</h1>
+    <h1>Heading 1 V</h1>
+
+    <script>
+      // var x = document.getElementsByTagName("h1");
+      // for(i=0; i<x.length; i++){
+      //     var value = x[i].innerHTML;
+      //     console.log(value);
+      //     x[i].remove();
+      //     var tag = document.createElement("h2");
+      //     console.log("created")
+      //     tag.appendChild(value);
+      //     console.log("set")
+      // }
+      // console.log(x)
+      var node = document.querySelectorAll("h1");
+      //   node.forEach((element)=>({
+
+      //   }));
+      for (i = 0; i < node.length; i++) {
+        var n = node[i].className;
+        console.log(n);
+        if (n != "bingo") {
+          newNode = document.createElement("h2");
+          parent = node[i].parentNode;
+          children = node[i].childNodes;
+
+          Array.prototype.forEach.call(children, function (elem) {
+            newNode.appendChild(elem);
+          });
+          parent.replaceChild(newNode, node[i]);
+        }
+      }
+    </script>
+  </body>
+</html>
