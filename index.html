@@ -13,6 +13,8 @@
     <h1>Heading 1 IV</h1>
     <h1>Heading 1 V</h1>
 
+    <button onclick="clicking()">Click Me</button>
+
     <script>
       // var x = document.getElementsByTagName("h1");
       // for(i=0; i<x.length; i++){
@@ -25,7 +27,9 @@
       //     console.log("set")
       // }
       // console.log(x)
-      var node = document.querySelectorAll("h1");
+
+      function clicking(){
+             var node = document.querySelectorAll("h1");
       //   node.forEach((element)=>({
 
       //   }));
@@ -42,6 +46,8 @@
           });
           parent.replaceChild(newNode, node[i]);
         }
+      }
+ 
       }
     </script>
   </body>
